@@ -1,0 +1,22 @@
+﻿<Window x:Class="TemporaryMailApp.View.OperationsOnMailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TemporaryMailApp.View"
+        mc:Ignorable="d"
+        Title="Почта" Height="451.087" Width="708.696">
+    <Grid Margin="-1,0,1,0">
+        <TextBox x:Name="MailTextBox" TextWrapping="Wrap" Text="" Margin="20,117,27,15" />
+        <Button x:Name="button" Content="Список писем" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="25,22,0,0" Click="ListOfEmailsButton_Click"/>
+        <Button x:Name="button1" Content="Текст письма по Id" VerticalAlignment="Top" Margin="293,71,286,0" Click="MessageTextButton_Click"/>
+        <Button x:Name="button2" Content="Время жизни до 10 минут" VerticalAlignment="Top" Margin="297,22,239,0" Click="LifeTimeMinButton_Click"/>
+        <Button x:Name="button3" Content="Удалить email" HorizontalAlignment="Right" VerticalAlignment="Top" Width="105" Margin="0,22,104,0" Click="RemoveEmailButton_Click"/>
+        <Button x:Name="button4" Content="Очистить email" HorizontalAlignment="Left" VerticalAlignment="Top" Width="101" Margin="29,71,0,0" Click="ClearEmailButton_Click"/>
+        <Button x:Name="button5" Content="Время жизни" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Margin="160,22,0,0" Click="LifetimeButton_Click"/>
+        <Button x:Name="button6" Content="Удалить все emails" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Margin="159,71,0,0" Click="RemoveAllEmailButton_Click"/>
+        <TextBox x:Name="IdTextBox" HorizontalAlignment="Right" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Margin="0,70,49,0"/>
+        <Button x:Name="button7" Content="Выход" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,22,12,0" Click="ExitButton_Click"/>
+
+    </Grid>
+</Window>
