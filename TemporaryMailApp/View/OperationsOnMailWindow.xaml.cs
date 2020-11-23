@@ -68,7 +68,7 @@ namespace TemporaryMailApp.View
         {
             if (Check())
             {
-                MailTextBox.Text += helpQuery.Operations("getlist&key=" + helpQuery.key + "&id=" + IdTextBox.Text) + "\n";
+                MailTextBox.Text += helpQuery.Operations("getmail&key=" + helpQuery.key + "&id=" + IdTextBox.Text) + "\n";
             }
         }
 
