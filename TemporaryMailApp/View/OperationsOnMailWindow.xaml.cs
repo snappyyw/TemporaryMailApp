@@ -24,28 +24,28 @@ namespace TemporaryMailApp.View
         public OperationsOnMailWindow(string name)
         {
             InitializeComponent();
-            MailTextBox.Text+= helpQuery.Operations("new&name=" + name);
+            MailTextBox.Text+= helpQuery.CreatingMail(name);
         }
 
         private void ListOfEmailsButton_Click(object sender, RoutedEventArgs e)
         {
-            MailTextBox.Text += helpQuery.Operations("getlist&key=" + helpQuery.key)+"\n";
+            MailTextBox.Text += helpQuery.ListOfEmails()+"\n";
         }
 
-        private void LifetimeButton_Click(object sender, RoutedEventArgs e)
+        private void LifeTimeButton_Click(object sender, RoutedEventArgs e)
         {
-            MailTextBox.Text += helpQuery.Operations("livetime&key=" + helpQuery.key) + "сек\n";
+            MailTextBox.Text +=$"Время жизни почты {helpQuery.LifeTime()} секунд\n";
         }
 
         private void LifeTimeMinButton_Click(object sender, RoutedEventArgs e)
         {
-            helpQuery.Operations("update&key=" + helpQuery.key);
+            MailTextBox.Text += $"Время жизни почты {helpQuery.LifeTimeMin()} секунд\n";
 
         }
 
         private void RemoveEmailButton_Click(object sender, RoutedEventArgs e)
         {
-            helpQuery.Operations("delete&key=" + helpQuery.key);
+            helpQuery.RemoveEmail();
             CreateMailWindow createMailWindow = new CreateMailWindow();
             createMailWindow.Show();
             this.Close();
@@ -53,12 +53,13 @@ namespace TemporaryMailApp.View
 
         private void ClearEmailButton_Click(object sender, RoutedEventArgs e)
         {
-            helpQuery.Operations("clear&key=" + helpQuery.key);
+            helpQuery.ClearEmail();
+            MailTextBox.Text += "Почта очищена\n";
         }
 
         private void RemoveAllEmailButton_Click(object sender, RoutedEventArgs e)
         {
-            helpQuery.Operations("deleteall");
+            helpQuery.RemoveAllEmail();
             CreateMailWindow createMailWindow = new CreateMailWindow();
             createMailWindow.Show();
             this.Close();
@@ -68,7 +69,7 @@ namespace TemporaryMailApp.View
         {
             if (Check())
             {
-                MailTextBox.Text += helpQuery.Operations("getmail&key=" + helpQuery.key + "&id=" + IdTextBox.Text) + "\n";
+                MailTextBox.Text += helpQuery.MessageText(int.Parse(IdTextBox.Text)) + "\n";
             }
         }
 
